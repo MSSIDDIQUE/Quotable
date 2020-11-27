@@ -59,6 +59,7 @@ class AuthorsFragment : Fragment(R.layout.fragment_athors), KodeinAware{
             authors.observe(viewLifecycleOwner){
                 authors_adapter.submitData(viewLifecycleOwner.lifecycle,it)
                 progress_bar.visibility = View.GONE
+                loading_text.visibility = View.GONE
             }
         }catch (e:NoConnectivityException){
             Toast.makeText(context,"Something went wrong please check your internet connection",Toast.LENGTH_LONG).show()

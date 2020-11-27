@@ -19,6 +19,10 @@ import org.kodein.di.generic.instance
 import org.kodein.di.generic.kcontext
 import com.baymax.quotable.data.Result
 import com.baymax.quotable.databinding.FragmentTagsBinding
+import kotlinx.android.synthetic.main.fragment_quotes.*
+import kotlinx.android.synthetic.main.fragment_tags.loading_text
+import kotlinx.android.synthetic.main.fragment_tags.progress_bar
+import kotlinx.android.synthetic.main.fragment_tags.recycler_view
 
 
 class TagsFragment : Fragment(R.layout.fragment_tags), KodeinAware{
@@ -61,15 +65,18 @@ class TagsFragment : Fragment(R.layout.fragment_tags), KodeinAware{
                         recycler_view.layoutManager = linearLayoutManager
                         recycler_view.adapter = tags_adapter
                         progress_bar.visibility = View.GONE
+                        loading_text.visibility = View.GONE
                     }
                     Result.Status.LOADING->{
                         progress_bar.visibility = View.VISIBLE
+                        loading_text.visibility = View.VISIBLE
                     }
                     Result.Status.ERROR->{
                         Toast.makeText(context,"Something went wrong please check your internet connection",Toast.LENGTH_LONG).show()
                     }
                 }
                 progress_bar.visibility = View.GONE
+                loading_text.visibility = View.GONE
             }
         }catch (e:NoConnectivityException){
             Toast.makeText(context,"Something went wrong please check your internet connection",Toast.LENGTH_LONG).show()

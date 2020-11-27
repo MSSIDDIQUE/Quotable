@@ -42,15 +42,12 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes), KodeinAware{
     override fun onStart() {
         super.onStart()
         if(args.tagName!=null){
-            Log.d("(Saquib)", " the tag is "+args.tagName)
             viewModel.updateRequest(Request(null,args.tagName))
         }
         else if(args.authorName!=null){
-            Log.d("(Saquib)", " the author is "+args.authorName)
             viewModel.updateRequest(Request(args.authorName,null))
         }
         else if(args.tagName==null && args.authorName==null){
-            Log.d("(Saquib)", " both are null ")
             viewModel.updateRequest(Request(null,null))
         }
     }
@@ -76,11 +73,12 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes), KodeinAware{
             val quotes = viewModel.quotesPage
             quotes.observe(viewLifecycleOwner){
                 quotes_adapter.submitData(viewLifecycleOwner.lifecycle,it)
-                progress_bar.visibility = View.GONE
             }
         }catch (e:NoConnectivityException){
             Toast.makeText(context,"Something went wrong please check your internet connection",Toast.LENGTH_LONG).show()
         }
+        progress_bar.visibility = View.GONE
+        loading_text.visibility = View.GONE
     }
 
     override fun onDestroy() {

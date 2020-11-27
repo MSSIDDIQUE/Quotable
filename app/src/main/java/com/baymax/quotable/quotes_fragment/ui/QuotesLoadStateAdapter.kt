@@ -8,6 +8,7 @@ import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.baymax.quotable.R
+import kotlinx.android.synthetic.main.fragment_tags.view.*
 import kotlinx.android.synthetic.main.list_view_footer.view.*
 
 class QuotesLoadStateAdapter(
@@ -17,7 +18,7 @@ class QuotesLoadStateAdapter(
     class LoadStateViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
 
     override fun onBindViewHolder(holder: LoadStateViewHolder, loadState: LoadState) {
-        val progress_bar = holder.itemView.load_state_progress
+        val progress_bar = holder.itemView.progress_bar
         val btn_retry = holder.itemView.load_state_retry
         val error_message = holder.itemView.load_state_errorMessage
 

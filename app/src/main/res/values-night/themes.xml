@@ -3,7 +3,7 @@
     <style name="Theme.Quotable" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#FFFF</item>
-        <item name="colorPrimaryVariant">#FFFF</item>
+        <item name="colorPrimaryVariant">#dcdcdc</item>
         <item name="colorOnPrimary">#FFFF</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/light_orange</item>

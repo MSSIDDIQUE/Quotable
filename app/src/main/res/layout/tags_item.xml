@@ -15,7 +15,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#0055">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/tag_card"
@@ -23,10 +24,10 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:background="@color/cardview_dark_background"
+            android:onClick="@{clickListener}"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
-            app:cardElevation="10dp"
-            android:onClick="@{clickListener}"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -71,10 +72,10 @@
                             android:id="@+id/count_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/varela"
                             android:text="@{Integer.toString(tag_data.quoteCount)}"
                             android:textColor="@color/black"
                             android:textStyle="bold"
-                            android:fontFamily="@font/varela"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

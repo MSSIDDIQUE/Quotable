@@ -13,7 +13,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#0055">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/author_card"
@@ -23,7 +24,7 @@
             android:background="@color/cardview_dark_background"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
-            app:cardElevation="10dp"
+            app:cardElevation="4dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -38,12 +39,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
+                    android:elevation="5dp"
                     android:fontFamily="@font/merienda"
                     android:text="@{quote_data.content}"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="24dp"
-                    android:elevation="5dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -53,9 +54,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="20dp"
+                    android:fontFamily="@font/courgette"
                     android:text='@{`___`+quote_data.author}'
                     android:textAlignment="textEnd"
-                    android:fontFamily="@font/courgette"
                     android:textColor="@color/black"
                     android:textSize="18dp"
                     android:textStyle="italic"
