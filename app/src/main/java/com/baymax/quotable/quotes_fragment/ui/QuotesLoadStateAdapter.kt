@@ -18,7 +18,7 @@ class QuotesLoadStateAdapter(
     class LoadStateViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
 
     override fun onBindViewHolder(holder: LoadStateViewHolder, loadState: LoadState) {
-        val progress_bar = holder.itemView.progress_bar
+        val progress_bar = holder.itemView.load_state_progress
         val btn_retry = holder.itemView.load_state_retry
         val error_message = holder.itemView.load_state_errorMessage
 
