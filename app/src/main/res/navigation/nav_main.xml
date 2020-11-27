@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/home_fragment">
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:name="com.baymax.quotable.home_fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_fragment_to_authorsFragment"
+            app:destination="@id/authors_fragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_quotesFragment"
+            app:destination="@id/quotes_fragment" />
+        <action
+            android:id="@+id/action_home_fragment_to_tagsFragment"
+            app:destination="@id/tags_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quotes_fragment"
+        android:name="com.baymax.quotable.quotes_fragment.ui.QuotesFragment"
+        android:label="QuotesFragment" >
+        <argument
+            android:name="tag_name"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="author_name"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/authors_fragment"
+        android:name="com.baymax.quotable.authors_fragment.ui.AuthorsFragment"
+        android:label="AuthorsFragment" >
+        <action
+            android:id="@+id/action_authors_fragment_to_quotes_fragment"
+            app:destination="@id/quotes_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tags_fragment"
+        android:name="com.baymax.quotable.tags_fragment.ui.TagsFragment"
+        android:label="TagsFragment" >
+        <action
+            android:id="@+id/action_tagsFragment_to_quotes_fragment"
+            app:destination="@id/quotes_fragment" />
+    </fragment>
+</navigation>

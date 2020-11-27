@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- regular -->
+    <font
+        android:font="@font/pacifico"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/pacifico"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/pacifico"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/pacifico"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/pacifico"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/pacifico"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+    <!-- regular -->
+    <font
+        android:font="@font/sansita"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/sansita"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/sansita"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/sansita"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/sansita"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/sansita"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- regular -->
+    <font
+        android:font="@font/lobster"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/lobster"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/lobster"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/lobster"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/lobster"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/lobster"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- regular -->
+    <font
+        android:font="@font/varela"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/varela"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/varela"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/varela"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/varela"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/varela"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- regular -->
+    <font
+        android:font="@font/courgette"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/courgette"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/courgette"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/courgette"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/courgette"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/courgette"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- regular -->
+    <font
+        android:font="@font/kaushan"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/kaushan"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/kaushan"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/kaushan"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/kaushan"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/kaushan"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- regular -->
+    <font
+        android:font="@font/niconne"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/niconne"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/niconne"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/niconne"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/niconne"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/niconne"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- regular -->
+    <font
+        android:font="@font/merienda"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/merienda"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/merienda"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/merienda"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/merienda"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/merienda"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- regular -->
+    <font
+        android:font="@font/playball"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/playball"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/playball"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/playball"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/playball"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/playball"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+
+    <!-- regular -->
+    <font
+        android:font="@font/berkshire"
+        android:fontStyle="normal"
+        android:fontWeight="400"
+
+        app:font="@font/berkshire"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+
+    <!-- italic -->
+    <font
+        android:font="@font/berkshire"
+        android:fontStyle="italic"
+        android:fontWeight="400"
+
+        app:font="@font/berkshire"
+        app:fontStyle="italic"
+        app:fontWeight="400" />
+
+    <!-- bold -->
+    <font
+        android:font="@font/berkshire"
+        android:fontStyle="normal"
+        android:fontWeight="700"
+
+        app:font="@font/berkshire"
+        app:fontStyle="normal"
+        app:fontWeight="700" />
+</font-family>
