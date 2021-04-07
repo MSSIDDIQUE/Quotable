@@ -9,7 +9,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="tag_data"
-            type="com.baymax.quotable.tags_fragment.data.Tag" />
+            type="com.baymax.quotable.ui.fragments.tags_fragment.data.Tag" />
 
     </data>
 

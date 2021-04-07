@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_fragment"
-        android:name="com.baymax.quotable.home_fragment.HomeFragment"
+        android:name="com.baymax.quotable.ui.fragments.home_fragment.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/quotes_fragment"
-        android:name="com.baymax.quotable.quotes_fragment.ui.QuotesFragment"
+        android:name="com.baymax.quotable.ui.fragments.quotes_fragment.ui.QuotesFragment"
         android:label="QuotesFragment" >
         <argument
             android:name="tag_name"
@@ -35,7 +35,7 @@
     </fragment>
     <fragment
         android:id="@+id/authors_fragment"
-        android:name="com.baymax.quotable.authors_fragment.ui.AuthorsFragment"
+        android:name="com.baymax.quotable.ui.fragments.authors_fragment.ui.AuthorsFragment"
         android:label="AuthorsFragment" >
         <action
             android:id="@+id/action_authors_fragment_to_quotes_fragment"
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/tags_fragment"
-        android:name="com.baymax.quotable.tags_fragment.ui.TagsFragment"
+        android:name="com.baymax.quotable.ui.fragments.tags_fragment.ui.TagsFragment"
         android:label="TagsFragment" >
         <action
             android:id="@+id/action_tagsFragment_to_quotes_fragment"

@@ -4,12 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.baymax.quotable.authors_fragment.data.Author
-import com.baymax.quotable.authors_fragment.data.AuthorsDao
-import com.baymax.quotable.quotes_fragment.data.Quote
-import com.baymax.quotable.quotes_fragment.data.QuotesDao
-import com.baymax.quotable.tags_fragment.data.Tag
-import com.baymax.quotable.tags_fragment.data.TagsDao
+import com.baymax.quotable.ui.fragments.authors_fragment.data.Author
+import com.baymax.quotable.ui.fragments.authors_fragment.data.AuthorsDao
+import com.baymax.quotable.ui.fragments.quotes_fragment.data.Quote
+import com.baymax.quotable.ui.fragments.quotes_fragment.data.QuotesDao
+import com.baymax.quotable.ui.fragments.tags_fragment.data.Tag
+import com.baymax.quotable.ui.fragments.tags_fragment.data.TagsDao
 
 @Database(
     entities = [Quote::class, Author::class, Tag::class],

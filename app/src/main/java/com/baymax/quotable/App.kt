@@ -1,19 +1,19 @@
 package com.baymax.quotable
 
 import android.app.Application
-import com.baymax.quotable.api.ConnectivityInterceptor
-import com.baymax.quotable.api.ConnectivityInterceptorImpl
-import com.baymax.quotable.api.Services
-import com.baymax.quotable.authors_fragment.data.AuthorsFragmentRepository
-import com.baymax.quotable.authors_fragment.data.AuthorsPageDataSource
-import com.baymax.quotable.authors_fragment.data.AuthorsRemoteDataSource
-import com.baymax.quotable.authors_fragment.ui.AuthorsFragmentViewModelFactory
+import com.baymax.quotable.data.api.ConnectivityInterceptor
+import com.baymax.quotable.data.api.ConnectivityInterceptorImpl
+import com.baymax.quotable.data.api.Services
+import com.baymax.quotable.ui.fragments.authors_fragment.data.AuthorsFragmentRepository
+import com.baymax.quotable.ui.fragments.authors_fragment.data.AuthorsPageDataSource
+import com.baymax.quotable.ui.fragments.authors_fragment.data.AuthorsRemoteDataSource
+import com.baymax.quotable.ui.fragments.authors_fragment.ui.AuthorsFragmentViewModelFactory
 import com.baymax.quotable.data.AppDatabase
-import com.baymax.quotable.quotes_fragment.data.*
-import com.baymax.quotable.quotes_fragment.ui.QuotesFragmentViewModelFactory
-import com.baymax.quotable.tags_fragment.data.TagsFragmentRepository
-import com.baymax.quotable.tags_fragment.data.TagsRemoteDataSource
-import com.baymax.quotable.tags_fragment.ui.TagsFragmentViewModelFactory
+import com.baymax.quotable.ui.fragments.quotes_fragment.data.*
+import com.baymax.quotable.ui.fragments.quotes_fragment.ui.QuotesFragmentViewModelFactory
+import com.baymax.quotable.ui.fragments.tags_fragment.data.TagsFragmentRepository
+import com.baymax.quotable.ui.fragments.tags_fragment.data.TagsRemoteDataSource
+import com.baymax.quotable.ui.fragments.tags_fragment.ui.TagsFragmentViewModelFactory
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
@@ -21,7 +21,6 @@ import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
 import org.kodein.di.generic.singleton
-import kotlin.math.sin
 
 class App:Application(),KodeinAware {
     override val kodein = Kodein.lazy {

@@ -7,7 +7,7 @@
         <import type="android.graphics.Color" />
         <variable
             name="quote_data"
-            type="com.baymax.quotable.quotes_fragment.data.Quote" />
+            type="com.baymax.quotable.ui.fragments.quotes_fragment.data.Quote" />
 
     </data>
 

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".home_fragment.HomeFragment">
+    tools:context=".ui.fragments.home_fragment.HomeFragment">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/quotes_card"

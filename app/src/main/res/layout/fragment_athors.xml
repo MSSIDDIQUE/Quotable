@@ -16,7 +16,7 @@
             android:clipToPadding="false"
             android:elevation="2dp"
             android:scrollbars="vertical"
-            tools:context="com.baymax.quotable.MainActivity"
+            tools:context="com.baymax.quotable.ui.activities.MainActivity"
             tools:listitem="@layout/author_item"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

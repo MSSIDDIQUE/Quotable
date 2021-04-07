@@ -9,7 +9,7 @@
             type="android.view.View.OnClickListener"/>
         <variable
             name="author_data"
-            type="com.baymax.quotable.authors_fragment.data.Author" />
+            type="com.baymax.quotable.ui.fragments.authors_fragment.data.Author" />
 
     </data>
 

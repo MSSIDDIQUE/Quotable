@@ -18,7 +18,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:context="com.baymax.quotable.MainActivity"
+            tools:context="com.baymax.quotable.ui.activities.MainActivity"
             tools:listitem="@layout/author_item" />
 
         <com.airbnb.lottie.LottieAnimationView
