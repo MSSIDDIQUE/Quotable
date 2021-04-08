@@ -7,12 +7,13 @@ import com.baymax.quotable.data.api.Services
 import retrofit2.HttpException
 import java.io.IOException
 
-private const val PAGE_INDEX = 0
-
 class QuotesPageDataSource(
     private val api: Services,
     private val request: Request?=null
 ):PagingSource<Int,Quote>() {
+    companion object{
+        private const val PAGE_INDEX = 0
+    }
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Quote> {
         val page = params.key ?: PAGE_INDEX
         return try {

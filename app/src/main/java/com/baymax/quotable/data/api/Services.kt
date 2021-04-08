@@ -15,6 +15,10 @@ import retrofit2.http.Query
 
 interface Services {
 
+    companion object{
+        const val ENDPOINT = "https://api.quotable.io/"
+    }
+
     @GET("quotes")
     suspend fun getQuotes(
         @Query("skip") page: Int? = null,
@@ -31,33 +35,4 @@ interface Services {
 
     @GET("tags")
     suspend fun getTags():Response<List<Tag>>
-
-    companion object{
-        operator fun invoke(
-            connectivityInterceptor: ConnectivityInterceptor
-        ):Services{
-            var requestInterceptor = Interceptor{chain ->
-                val url = chain.request()
-                    .url
-                    .newBuilder()
-                    .build()
-                Log.d("(Saquib)","the url is "+url.toString())
-                val request = chain.request()
-                    .newBuilder()
-                    .url(url)
-                    .build()
-                return@Interceptor chain.proceed(request)
-            }
-            val okHttpClient = OkHttpClient.Builder()
-                .addInterceptor(requestInterceptor)
-                .addInterceptor(connectivityInterceptor)
-                .build()
-            return Retrofit.Builder()
-                .client(okHttpClient)
-                .baseUrl("https://api.quotable.io/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(Services::class.java)
-        }
-    }
 }

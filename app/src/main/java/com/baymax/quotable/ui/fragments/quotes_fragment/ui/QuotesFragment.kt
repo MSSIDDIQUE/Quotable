@@ -1,5 +1,6 @@
 package com.baymax.quotable.ui.fragments.quotes_fragment.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -12,6 +13,9 @@ import com.baymax.quotable.R
 import com.baymax.quotable.data.api.Request
 import com.baymax.quotable.utils.exceptions.NoConnectivityException
 import com.baymax.quotable.databinding.FragmentQuotesBinding
+import com.baymax.quotable.di.Injectable
+import com.baymax.quotable.di.injectViewModel
+import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_quotes.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,22 +23,22 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.kcontext
+import javax.inject.Inject
 
-class QuotesFragment : Fragment(R.layout.fragment_quotes), KodeinAware{
+class QuotesFragment : Fragment(R.layout.fragment_quotes), Injectable{
 
-    override val kodeinContext = kcontext<Fragment>(this)
-    override val kodein by kodein()
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: QuotesFragmentViewModel
     private lateinit var quotes_adapter: QuotesAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private val viewModelFactory: QuotesFragmentViewModelFactory by instance()
     private var _binding: FragmentQuotesBinding ? = null
     private val binding get() = _binding!!
     private val args : QuotesFragmentArgs by navArgs()
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this,viewModelFactory).get(QuotesFragmentViewModel::class.java)
+        viewModel = injectViewModel(viewModelFactory)
         bindUi()
     }
 
@@ -49,6 +53,11 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes), KodeinAware{
         else if(args.tagName==null && args.authorName==null){
             viewModel.updateRequest(Request(null,null))
         }
+    }
+
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

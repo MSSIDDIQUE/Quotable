@@ -6,8 +6,11 @@ import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.baymax.quotable.data.resultLiveData
 import com.baymax.quotable.utils.PAGE_SIZE
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class AuthorsFragmentRepository(
+@Singleton
+class AuthorsFragmentRepository @Inject constructor(
     private val dao: AuthorsDao,
     private val remoteDataSource: AuthorsRemoteDataSource,
     private val pageDataSource: AuthorsPageDataSource

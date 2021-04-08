@@ -6,11 +6,15 @@ import com.baymax.quotable.data.api.Services
 import retrofit2.HttpException
 import java.io.IOException
 
-private const val PAGE_INDEX = 10
+
 
 class AuthorsPageDataSource(
     private val api: Services
 ): PagingSource<Int, Author>() {
+
+    companion object{
+        private const val PAGE_INDEX = 10
+    }
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Author> {
         val page = params.key ?: PAGE_INDEX
         return try {

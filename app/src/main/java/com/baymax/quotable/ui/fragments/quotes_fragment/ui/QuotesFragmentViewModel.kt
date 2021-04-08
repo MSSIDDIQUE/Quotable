@@ -4,8 +4,9 @@ import androidx.lifecycle.*
 import androidx.paging.cachedIn
 import com.baymax.quotable.data.api.Request
 import com.baymax.quotable.ui.fragments.quotes_fragment.data.QuotesFragmentRepository
+import javax.inject.Inject
 
-class QuotesFragmentViewModel(private val repo: QuotesFragmentRepository):ViewModel() {
+class QuotesFragmentViewModel @Inject constructor(private val repo: QuotesFragmentRepository):ViewModel() {
 
     private val current_request =  MutableLiveData<Request>()
 

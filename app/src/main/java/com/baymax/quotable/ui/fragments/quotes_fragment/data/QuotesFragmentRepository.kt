@@ -8,8 +8,11 @@ import com.baymax.quotable.data.api.Request
 import com.baymax.quotable.data.api.Services
 import com.baymax.quotable.data.resultLiveData
 import com.baymax.quotable.utils.PAGE_SIZE
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class QuotesFragmentRepository(
+@Singleton
+class QuotesFragmentRepository @Inject constructor(
         private val api:Services,
         private val dao: QuotesDao,
         private val remoteDataSource: QuotesRemoteDataSource

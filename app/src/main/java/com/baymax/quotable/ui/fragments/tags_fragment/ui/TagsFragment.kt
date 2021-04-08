@@ -1,5 +1,6 @@
 package com.baymax.quotable.ui.fragments.tags_fragment.ui
 
+import android.content.Context
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -19,26 +20,29 @@ import org.kodein.di.generic.instance
 import org.kodein.di.generic.kcontext
 import com.baymax.quotable.data.Result
 import com.baymax.quotable.databinding.FragmentTagsBinding
+import com.baymax.quotable.di.Injectable
+import com.baymax.quotable.di.injectViewModel
+import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_quotes.*
 import kotlinx.android.synthetic.main.fragment_tags.loading_text
 import kotlinx.android.synthetic.main.fragment_tags.progress_bar
 import kotlinx.android.synthetic.main.fragment_tags.recycler_view
+import javax.inject.Inject
 
 
-class TagsFragment : Fragment(R.layout.fragment_tags), KodeinAware{
+class TagsFragment : Fragment(R.layout.fragment_tags),Injectable{
 
-    override val kodeinContext = kcontext<Fragment>(this)
-    override val kodein by kodein()
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: TagsFragmentViewModel
     private lateinit var tags_adapter: TagsAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private val viewModelFactory: TagsFragmentViewModelFactory by instance()
     private var _binding: FragmentTagsBinding ? = null
     private val binding get() = _binding!!
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this,viewModelFactory).get(TagsFragmentViewModel::class.java)
+        viewModel = injectViewModel(viewModelFactory)
         bindUi()
     }
 
@@ -52,6 +56,11 @@ class TagsFragment : Fragment(R.layout.fragment_tags), KodeinAware{
                 layoutManager = linearLayoutManager
             }
         }
+    }
+
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
     }
 
     private fun bindUi() = lifecycleScope.launch(Dispatchers.Main) {
