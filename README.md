@@ -9,13 +9,22 @@ the major purpose of developing this application is to demonstrate the clean arc
 
 # Techstacks and tools used 
 
-**Design Pattern** - MVVM \n
+**Design Pattern** - MVVM
+
 **Persistance database** - Room Db
+
 **Language** - Kotlin
+
 **Dependency injection framework** - Dagger 2.2 (Migrated from Kodein)
+
 **Api** - Quotable(https://api.quotable.io/)
+
 **Paging library** - Paging3
+
 **Middleware for netorking** - Coroutines
+
 **Networking library for api calls** - Retrofit
+
 and other architectural components 
+
  
