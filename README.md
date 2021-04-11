@@ -9,7 +9,7 @@ the major purpose of developing this application is to demonstrate the clean arc
 
 # Techstacks and tools used 
 
-**Design Pattern** - MVVM
+**Design Pattern** - MVVM \n
 **Persistance database** - Room Db
 **Language** - Kotlin
 **Dependency injection framework** - Dagger 2.2 (Migrated from Kodein)
