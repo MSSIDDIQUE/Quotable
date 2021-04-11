@@ -2,8 +2,8 @@ package com.baymax.quotable.ui.fragments.quotes_fragment.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.baymax.quotable.data.api.Request
-import com.baymax.quotable.data.api.Services
+import com.baymax.quotable.api.Request
+import com.baymax.quotable.api.Services
 import retrofit2.HttpException
 import java.io.IOException
 

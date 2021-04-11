@@ -1,4 +1,4 @@
-package com.baymax.quotable
+package com.baymax.quotable.di
 
 import android.app.Activity
 import android.app.Application
@@ -6,8 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
-import com.baymax.quotable.di.DaggerAppComponent
-import com.baymax.quotable.di.Injectable
+import com.baymax.quotable.App
 import dagger.android.AndroidInjection
 import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection

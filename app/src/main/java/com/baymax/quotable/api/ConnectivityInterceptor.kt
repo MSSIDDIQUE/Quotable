@@ -1,4 +1,4 @@
-package com.baymax.quotable.data.api
+package com.baymax.quotable.api
 
 import android.content.Context
 import android.net.ConnectivityManager

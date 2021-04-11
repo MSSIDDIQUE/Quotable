@@ -1,7 +1,7 @@
 package com.baymax.quotable.ui.fragments.tags_fragment.data
 
-import com.baymax.quotable.data.api.BaseDataSource
-import com.baymax.quotable.data.api.Services
+import com.baymax.quotable.api.BaseDataSource
+import com.baymax.quotable.api.Services
 
 class TagsRemoteDataSource(
     private val api: Services

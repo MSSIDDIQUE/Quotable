@@ -3,7 +3,7 @@ package com.baymax.quotable.di
 import android.app.Application
 import android.content.Context
 import com.baymax.quotable.data.AppDatabase
-import com.baymax.quotable.data.api.Services
+import com.baymax.quotable.api.Services
 import com.baymax.quotable.ui.fragments.authors_fragment.data.AuthorsPageDataSource
 import com.baymax.quotable.ui.fragments.authors_fragment.data.AuthorsRemoteDataSource
 import com.baymax.quotable.ui.fragments.quotes_fragment.data.QuotesPageDataSource

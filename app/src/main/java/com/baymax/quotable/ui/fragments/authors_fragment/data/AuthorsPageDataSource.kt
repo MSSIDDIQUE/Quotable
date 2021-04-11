@@ -2,7 +2,7 @@ package com.baymax.quotable.ui.fragments.authors_fragment.data
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.baymax.quotable.data.api.Services
+import com.baymax.quotable.api.Services
 import retrofit2.HttpException
 import java.io.IOException
 

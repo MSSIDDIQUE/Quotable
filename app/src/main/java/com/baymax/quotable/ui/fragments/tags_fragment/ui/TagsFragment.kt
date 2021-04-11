@@ -2,43 +2,46 @@ package com.baymax.quotable.ui.fragments.tags_fragment.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.baymax.quotable.R
 import com.baymax.quotable.utils.exceptions.NoConnectivityException
 import com.baymax.quotable.ui.fragments.tags_fragment.data.Tag
-import kotlinx.android.synthetic.main.fragment_tags.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.kodein.di.KodeinAware
-import org.kodein.di.android.x.kodein
-import org.kodein.di.generic.instance
-import org.kodein.di.generic.kcontext
 import com.baymax.quotable.data.Result
 import com.baymax.quotable.databinding.FragmentTagsBinding
 import com.baymax.quotable.di.Injectable
 import com.baymax.quotable.di.injectViewModel
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.android.synthetic.main.fragment_quotes.*
-import kotlinx.android.synthetic.main.fragment_tags.loading_text
-import kotlinx.android.synthetic.main.fragment_tags.progress_bar
-import kotlinx.android.synthetic.main.fragment_tags.recycler_view
 import javax.inject.Inject
 
 
-class TagsFragment : Fragment(R.layout.fragment_tags),Injectable{
+class TagsFragment : Fragment(),Injectable{
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: TagsFragmentViewModel
     private lateinit var tags_adapter: TagsAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private var _binding: FragmentTagsBinding ? = null
+    private var _binding: FragmentTagsBinding? = null
     private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+
+        _binding = FragmentTagsBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -49,9 +52,8 @@ class TagsFragment : Fragment(R.layout.fragment_tags),Injectable{
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         linearLayoutManager = LinearLayoutManager(context)
-        _binding = FragmentTagsBinding.bind(view)
-        _binding.apply {
-            recycler_view.apply {
+        _binding?.apply {
+            recyclerView.apply {
                 setHasFixedSize(true)
                 layoutManager = linearLayoutManager
             }
@@ -71,21 +73,27 @@ class TagsFragment : Fragment(R.layout.fragment_tags),Injectable{
                     Result.Status.SUCCESS->{
                         tags_adapter = TagsAdapter(result.data as ArrayList<Tag>)
                         linearLayoutManager = LinearLayoutManager(context)
-                        recycler_view.layoutManager = linearLayoutManager
-                        recycler_view.adapter = tags_adapter
-                        progress_bar.visibility = View.GONE
-                        loading_text.visibility = View.GONE
+                        _binding?.apply {
+                            recyclerView.layoutManager = linearLayoutManager
+                            recyclerView.adapter = tags_adapter
+                            progressBar.visibility = View.GONE
+                            loadingText.visibility = View.GONE
+                        }
                     }
                     Result.Status.LOADING->{
-                        progress_bar.visibility = View.VISIBLE
-                        loading_text.visibility = View.VISIBLE
+                        _binding?.apply {
+                            progressBar.visibility = View.VISIBLE
+                            loadingText.visibility = View.VISIBLE
+                        }
                     }
                     Result.Status.ERROR->{
                         Toast.makeText(context,"Something went wrong please check your internet connection",Toast.LENGTH_LONG).show()
                     }
                 }
-                progress_bar.visibility = View.GONE
-                loading_text.visibility = View.GONE
+                _binding?.apply {
+                    progressBar.visibility = View.GONE
+                    loadingText.visibility = View.GONE
+                }
             }
         }catch (e:NoConnectivityException){
             Toast.makeText(context,"Something went wrong please check your internet connection",Toast.LENGTH_LONG).show()

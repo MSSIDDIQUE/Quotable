@@ -7,36 +7,45 @@ import androidx.core.view.isVisible
 import androidx.paging.LoadState
 import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.baymax.quotable.R
-import kotlinx.android.synthetic.main.list_view_footer.view.*
+import com.baymax.quotable.databinding.ListViewFooterBinding
 
 class QuotesLoadStateAdapter(
     private val retry:()->Unit
 ):LoadStateAdapter<QuotesLoadStateAdapter.LoadStateViewHolder>() {
 
+
+    private var _binding: ListViewFooterBinding? = null
+    private val binding get() = _binding!!
+
     class LoadStateViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
 
     override fun onBindViewHolder(holder: LoadStateViewHolder, loadState: LoadState) {
-        val progress_bar = holder.itemView.load_state_progress
-        val btn_retry = holder.itemView.load_state_retry
-        val error_message = holder.itemView.load_state_errorMessage
 
-        btn_retry.isVisible = loadState !is LoadState.Loading
-        error_message.isVisible = loadState !is LoadState.Loading
-        progress_bar.isVisible = loadState is LoadState.Loading
+        _binding?.apply {
+            loadStateProgress.isVisible = loadState !is LoadState.Loading
+            loadStateRetry.isVisible = loadState !is LoadState.Loading
+            loadStateErrorMessage.isVisible = loadState !is LoadState.Loading
 
-        if(loadState is LoadState.Error){
-            error_message.text = loadState.error.localizedMessage
+            if(loadState is LoadState.Error){
+                loadStateErrorMessage.text = loadState.error.localizedMessage
+            }
+
+            loadStateRetry.setOnClickListener {
+                retry.invoke()
+            }
         }
 
-        btn_retry.setOnClickListener {
-            retry.invoke()
-        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState): LoadStateViewHolder {
+        _binding = ListViewFooterBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return LoadStateViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.list_view_footer,parent,false)
+            binding.root
         )
+    }
+
+    override fun onDetachedFromRecyclerView(recyclerView: RecyclerView) {
+        super.onDetachedFromRecyclerView(recyclerView)
+        _binding = null
     }
 }

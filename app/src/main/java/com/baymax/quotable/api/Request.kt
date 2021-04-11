@@ -1,4 +1,4 @@
-package com.baymax.quotable.data.api
+package com.baymax.quotable.api
 
 data class Request(
         val author:String?=null,

@@ -1,6 +1,7 @@
 package com.baymax.quotable
 
 import android.app.Application
+import com.baymax.quotable.di.AppInjector
 import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector

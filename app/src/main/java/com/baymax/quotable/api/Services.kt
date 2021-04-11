@@ -1,15 +1,10 @@
-package com.baymax.quotable.data.api
+package com.baymax.quotable.api
 
-import android.util.Log
 import com.baymax.quotable.ui.fragments.authors_fragment.data.Author
 import com.baymax.quotable.ui.fragments.quotes_fragment.data.Quote
 import com.baymax.quotable.ui.fragments.tags_fragment.data.Tag
 import com.baymax.quotable.utils.PAGE_SIZE
-import okhttp3.Interceptor
-import okhttp3.OkHttpClient
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 

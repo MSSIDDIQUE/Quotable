@@ -2,7 +2,7 @@ package com.baymax.quotable.ui.fragments.quotes_fragment.ui
 
 import androidx.lifecycle.*
 import androidx.paging.cachedIn
-import com.baymax.quotable.data.api.Request
+import com.baymax.quotable.api.Request
 import com.baymax.quotable.ui.fragments.quotes_fragment.data.QuotesFragmentRepository
 import javax.inject.Inject
 

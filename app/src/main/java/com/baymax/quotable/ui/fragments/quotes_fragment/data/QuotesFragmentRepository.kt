@@ -4,8 +4,8 @@ import androidx.lifecycle.distinctUntilChanged
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
-import com.baymax.quotable.data.api.Request
-import com.baymax.quotable.data.api.Services
+import com.baymax.quotable.api.Request
+import com.baymax.quotable.api.Services
 import com.baymax.quotable.data.resultLiveData
 import com.baymax.quotable.utils.PAGE_SIZE
 import javax.inject.Inject

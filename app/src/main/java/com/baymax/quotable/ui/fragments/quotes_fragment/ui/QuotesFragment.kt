@@ -2,39 +2,47 @@ package com.baymax.quotable.ui.fragments.quotes_fragment.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.baymax.quotable.R
-import com.baymax.quotable.data.api.Request
+import com.baymax.quotable.api.Request
 import com.baymax.quotable.utils.exceptions.NoConnectivityException
 import com.baymax.quotable.databinding.FragmentQuotesBinding
 import com.baymax.quotable.di.Injectable
 import com.baymax.quotable.di.injectViewModel
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.android.synthetic.main.fragment_quotes.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.kodein.di.KodeinAware
-import org.kodein.di.android.x.kodein
-import org.kodein.di.generic.instance
-import org.kodein.di.generic.kcontext
 import javax.inject.Inject
 
-class QuotesFragment : Fragment(R.layout.fragment_quotes), Injectable{
+class QuotesFragment : Fragment(), Injectable{
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
     private lateinit var viewModel: QuotesFragmentViewModel
     private lateinit var quotes_adapter: QuotesAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private var _binding: FragmentQuotesBinding ? = null
-    private val binding get() = _binding!!
     private val args : QuotesFragmentArgs by navArgs()
+
+    private var _binding: FragmentQuotesBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+
+        _binding = FragmentQuotesBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -64,9 +72,8 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes), Injectable{
         super.onViewCreated(view, savedInstanceState)
         quotes_adapter = QuotesAdapter()
         linearLayoutManager = LinearLayoutManager(context)
-        _binding = FragmentQuotesBinding.bind(view)
-        _binding.apply {
-            recycler_view.apply {
+        _binding?.apply {
+            recyclerView.apply {
                 setHasFixedSize(true)
                 adapter = quotes_adapter.withLoadStateFooter(
                     footer = QuotesLoadStateAdapter{quotes_adapter.retry()}
@@ -85,8 +92,10 @@ class QuotesFragment : Fragment(R.layout.fragment_quotes), Injectable{
         }catch (e:NoConnectivityException){
             Toast.makeText(context,"Something went wrong please check your internet connection",Toast.LENGTH_LONG).show()
         }
-        progress_bar.visibility = View.GONE
-        loading_text.visibility = View.GONE
+        _binding?.apply {
+            progressBar.visibility = View.GONE
+            loadingText.visibility = View.GONE
+        }
     }
 
     override fun onDestroy() {

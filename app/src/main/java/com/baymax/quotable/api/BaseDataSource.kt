@@ -1,4 +1,4 @@
-package com.baymax.quotable.data.api
+package com.baymax.quotable.api
 
 import com.baymax.quotable.data.Result
 import retrofit2.Response

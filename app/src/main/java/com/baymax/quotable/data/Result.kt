@@ -3,8 +3,8 @@ package com.baymax.quotable.data
 /**
  * A generic class that holds a value with its loading status.
  *
- * com.baymax.quotable.data.api.Result is usually created by the Repository classes where they return
- * `LiveData<com.baymax.quotable.data.api.Result<T>>` to pass back the latest data to the UI with its fetch status.
+ * com.baymax.quotable.api.Result is usually created by the Repository classes where they return
+ * `LiveData<com.baymax.quotable.api.Result<T>>` to pass back the latest data to the UI with its fetch status.
  */
 
 data class Result<out T>(val status: Status, val data: T?, val message: String?) {
