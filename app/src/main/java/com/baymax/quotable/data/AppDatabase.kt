@@ -13,7 +13,8 @@ import com.baymax.quotable.ui.fragments.tags_fragment.data.TagsDao
 
 @Database(
     entities = [Quote::class, Author::class, Tag::class],
-    version = 1
+    version = 1,
+    exportSchema = false
 )
 abstract class AppDatabase: RoomDatabase() {
     abstract fun quotesDao() : QuotesDao

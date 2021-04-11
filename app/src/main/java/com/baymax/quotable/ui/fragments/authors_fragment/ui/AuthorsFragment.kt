@@ -30,19 +30,14 @@ class AuthorsFragment : Fragment(), Injectable{
     private var _binding: FragmentAthorsBinding ? = null
     private val binding get() = _binding!!
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = injectViewModel(viewModelFactory)
-        bindUi()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-
+        viewModel = injectViewModel(viewModelFactory)
+        bindUi()
         _binding = FragmentAthorsBinding.inflate(inflater, container, false)
         return binding.root
     }

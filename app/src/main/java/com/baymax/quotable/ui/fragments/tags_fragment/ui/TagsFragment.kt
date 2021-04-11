@@ -43,14 +43,10 @@ class TagsFragment : Fragment(),Injectable{
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = injectViewModel(viewModelFactory)
-        bindUi()
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = injectViewModel(viewModelFactory)
+        bindUi()
         linearLayoutManager = LinearLayoutManager(context)
         _binding?.apply {
             recyclerView.apply {

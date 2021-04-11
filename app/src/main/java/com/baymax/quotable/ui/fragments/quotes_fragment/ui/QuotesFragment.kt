@@ -44,12 +44,6 @@ class QuotesFragment : Fragment(), Injectable{
         return binding.root
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = injectViewModel(viewModelFactory)
-        bindUi()
-    }
-
     override fun onStart() {
         super.onStart()
         if(args.tagName!=null){
@@ -70,6 +64,8 @@ class QuotesFragment : Fragment(), Injectable{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = injectViewModel(viewModelFactory)
+        bindUi()
         quotes_adapter = QuotesAdapter()
         linearLayoutManager = LinearLayoutManager(context)
         _binding?.apply {
