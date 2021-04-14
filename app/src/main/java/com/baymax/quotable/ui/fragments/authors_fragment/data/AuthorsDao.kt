@@ -7,12 +7,12 @@ import androidx.room.*
 interface AuthorsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllAuthors(authors : List<Author>)
+    suspend fun insertAllAuthors(authors : List<Author>)
 
     @Query("Select * from Authors")
-    fun getAllAuthors():LiveData<List<Author>>
+    suspend fun getAllAuthors():List<Author>
 
     @Query("DELETE from Authors")
-    fun deleteAllAuthors()
+    suspend fun deleteAllAuthors()
 
 }

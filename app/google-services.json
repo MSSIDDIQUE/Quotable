@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1067629151980",
+    "project_id": "quotable-db429",
+    "storage_bucket": "quotable-db429.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067629151980:android:5319b90ed88a3be13007c9",
+        "android_client_info": {
+          "package_name": "com.baymax.quotable"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067629151980-t1do22jqp3358e9spaffhn8gttjjga59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIoR2r4IUeuIppzWP8PBe5uLEQN74GoR8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067629151980-t1do22jqp3358e9spaffhn8gttjjga59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

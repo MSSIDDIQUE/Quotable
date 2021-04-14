@@ -3,6 +3,9 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-kapt'
     id 'androidx.navigation.safeargs'
+    id 'com.google.gms.google-services'
+    id 'com.google.firebase.crashlytics'
+    id 'com.google.firebase.firebase-perf'
 }
 
 kapt {
@@ -44,13 +47,20 @@ android {
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:26.8.0')
+    // Declare the dependencies for the Crashlytics and Analytics libraries
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    // Declare the dependency for the Performance Monitoring library
+    implementation 'com.google.firebase:firebase-perf-ktx'
+    // Declare the dependency for the firebase cloud firestore
+    implementation 'com.google.firebase:firebase-firestore-ktx'
 
     //material desing
     implementation "com.google.android.material:material:$material_design_version"
@@ -62,6 +72,8 @@ dependencies {
     // Room
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
+    //for having coroutines support in room
+    implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
     // Gson
@@ -77,12 +89,14 @@ dependencies {
     implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
 
     // Okhttp
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.8.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2'
 
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
     // LiveData
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
     // Lifecycles only (without ViewModel or LiveData)
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
@@ -98,11 +112,11 @@ dependencies {
     //paging3
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
 
-    //Epoxy
-    kapt "com.airbnb.android:epoxy-processor:$epoxy_version"
-    implementation "com.airbnb.android:epoxy:$epoxy_version"
-    implementation "com.airbnb.android:epoxy-databinding:$epoxy_version"
-
     //lottie
     implementation "com.airbnb.android:lottie:$lottie_version"
+
+    //test
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }

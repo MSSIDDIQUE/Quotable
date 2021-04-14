@@ -7,12 +7,12 @@ import androidx.room.*
 interface TagsDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAllTags(tags : List<Tag>)
+    suspend fun insertAllTags(tags : List<Tag>)
 
     @Query("Select * from Tags")
-    fun getAllTags():LiveData<List<Tag>>
+    suspend fun getAllTags():List<Tag>
 
     @Query("DELETE from Tags")
-    fun deleteAllTags()
+    suspend fun deleteAllTags()
 
 }
